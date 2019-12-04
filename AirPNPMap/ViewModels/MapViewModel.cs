@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using AirPNPMap.Models;
+using Plugin.Geolocator;
 using Xamarin.Forms.Maps;
 
 namespace AirPNPMap.ViewModels
@@ -16,6 +17,15 @@ namespace AirPNPMap.ViewModels
         }
 
 
+        public bool IsLocationAvailable()
+        {
+            if (!CrossGeolocator.IsSupported)
+                return false;
+
+            return CrossGeolocator.Current.IsGeolocationAvailable;
+        }
+
+
         public MapViewModel()
         {
 
@@ -25,7 +35,8 @@ namespace AirPNPMap.ViewModels
 
             Task.Run(async () =>
             {
-                var position = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync();
+
+                var position = await CrossGeolocator.Current.GetPositionAsync();
                 MyPosition = new Position(position.Latitude, position.Longitude);
             });
         }
@@ -35,7 +46,8 @@ namespace AirPNPMap.ViewModels
         private ObservableCollection<CustomPin> _pinCollection = new ObservableCollection<CustomPin>();
         public ObservableCollection<CustomPin> PinCollection { get { return _pinCollection; } set { _pinCollection = value; OnPropertyChanged(); } }
 
-        private Position _myPosition = new Position(40.7711865, -111.9024351);
+        //40.7711865, -111.9024351
+        private Position _myPosition = new Position();
         public Position MyPosition { get { return _myPosition; } set { _myPosition = value; OnPropertyChanged(); } }
 
     }

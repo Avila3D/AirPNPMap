@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Plugin.Permissions;
 using Xamarin;
+using Plugin.CurrentActivity;
 
 namespace AirPNPMap.Droid
 {
@@ -23,6 +24,7 @@ namespace AirPNPMap.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
             FormsMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

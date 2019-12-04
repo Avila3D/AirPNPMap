@@ -17,6 +17,7 @@ namespace AirPNPMap
         public MainPage()
         {
             BindingContext = new MapViewModel();
+            
             InitializeComponent();
         }
     }

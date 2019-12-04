@@ -2,6 +2,7 @@
 using AirPNPMap.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.Geolocator;
 
 namespace AirPNPMap
 {
@@ -10,7 +11,7 @@ namespace AirPNPMap
         public App()
         {
             InitializeComponent();
-
+            
             MainPage = new MainPage();
         }
 

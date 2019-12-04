@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AirPNPMap.MainPage"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns:local="clr-namespace:AirPNPMap.Views"
-             Title="Map">
+             Title="Map" Shell.NavBarIsVisible = "False">
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="NavigationPrimary"></Color>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}"  />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White" />
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
                 <Setter Property="Shell.TabBarTitleColor" Value="White" />
@@ -22,10 +22,10 @@
     <!-- Your Pages -->
 
     <TabBar>
-        <Tab Title="Find Spot" Icon="tab_feed.png">
+        <Tab Title="Find Spot" Icon="AirPnP_splash_small">
             <ShellContent ContentTemplate="{DataTemplate local:MapView}" />
         </Tab>
-        <Tab Title="Submit Spot" Icon="tab_about.png">
+        <Tab Title="Submit Spot" Icon="AirPnP_splash_small">
             <ShellContent ContentTemplate="{DataTemplate local:MapView}" />
         </Tab>
     </TabBar>
