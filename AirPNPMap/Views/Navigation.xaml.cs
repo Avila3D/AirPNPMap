@@ -12,6 +12,7 @@ using Xamarin.Forms.Maps;
 
 
 
+
 namespace AirPNPMap.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -45,29 +46,29 @@ namespace AirPNPMap.Views
                 Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
             
             }
-            parking parking = new parking
+            Parking parking = new Parking
             {
 
                 Location = LocationEntry.Text,
                 Description = DescriptionEntry.Text,
                 Price = PriceEntry.Text,
                 Name = NameEntry.Text,
-                Avalability = AvalavilityEntry.Text,
-                //Latitude = location.Latitude,
-                //Longitude =location.Longitude,
+                Availability = AvailabilityEntry.Text,
+                Latitude = location.Latitude,
+                Longitude = location.Longitude,
                 //PositionMap = location.ToString,
 
             };
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
-                conn.CreateTable<parking>();
+                conn.CreateTable<Parking>();
                 int rows = conn.Insert(parking);
 
                 if (rows > 0)
-                    DisplayAlert("Success", $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}", "Ok");
+                    await DisplayAlert("Success", $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}", "Ok");
                 else
-                    DisplayAlert("Failure", "Parking spot failed to be inserted", "Ok");
+                    await DisplayAlert("Failure", "Parking spot failed to be inserted", "Ok");
             }
         }
 

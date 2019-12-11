@@ -6,8 +6,9 @@ using Xamarin.Forms.Maps;
 
 namespace AirPNPMap.Models
 {
-    public class parking
+    public class Parking
     {
+      
 
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -20,9 +21,9 @@ namespace AirPNPMap.Models
         
         public string Description { get; set; }
 
-        public string Avalability { get; set; }
+        public string Availability { get; set; }
 
-       public double Latitude { get; set; }
+        public double Latitude { get; set; }
 
         public double Longitude { get; set; }
 

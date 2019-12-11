@@ -23,8 +23,8 @@ namespace AirPNPMap.Views
             base.OnAppearing();
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
-                conn.CreateTable<parking>();
-                var parkings = conn.Table<parking>().ToList();
+                conn.CreateTable<Parking>();
+                var parkings = conn.Table<Parking>().ToList();
                 parkingListView.ItemsSource = parkings;
 
             }
