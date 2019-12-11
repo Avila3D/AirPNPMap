@@ -36,16 +36,16 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" Grid.Column="0" Text="Account Settings" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" />
-            <Button Grid.Row="1" Text="  Account Settings                                 " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White"/>
+            <Entry Grid.Row="1" x:Name="NameEntry" Placeholder="            Name           " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White"/>
             <Image Source="PersonalInformation" Grid.Row="1" HorizontalOptions="End" VerticalOptions="Center"  BackgroundColor="White"/>
 
-            <Button Grid.Row="2" Text="  Price                                                         " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White"/>
+            <Entry Grid.Row="2" x:Name="PriceEntry" Placeholder="          Price            " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White"/>
             <Image Source="Price" Grid.Row="2" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White"/>
-            <Button Grid.Row="3" Text="  Description/details                                           " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White" />
+            <Entry Grid.Row="3" x:Name="DescriptionEntry" Placeholder="         Description           " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White" />
             <Image Source="Descriptiondetails" Grid.Row="3" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White"/>
-            <Button Grid.Row="4" Text="  Availability                                                  " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White"/>
+            <Entry Grid.Row="4" x:Name="AvalavilityEntry" Placeholder="         Avalavility         " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White"/>
             <Image Source="Availability" Grid.Row="4" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White"/>
-            <Button Grid.Row="5" Text="  Location                                                      " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White"/>
+            <Entry Grid.Row="5" x:Name="LocationEntry" Placeholder="         Location         " HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" BackgroundColor="White"/>
             <Image Source="Location" Grid.Row="5" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White"/>
 
         </Grid>
@@ -70,7 +70,7 @@
                 <ColumnDefinition Width ="*"/>
                 <ColumnDefinition Width ="*"/>
             </Grid.ColumnDefinitions>
-            <Button ImageSource="Search" Grid.Column="0"/>
+            <Button ImageSource="Search" Grid.Column="0" Clicked="Save_Button"/>
             <Button ImageSource="Search" Grid.Column="1"/>
             <Button ImageSource="Mail" Grid.Column="2"/>
             <Button ImageSource="Mail" Grid.Column="3"/>

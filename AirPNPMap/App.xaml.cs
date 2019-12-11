@@ -6,13 +6,27 @@ using Plugin.Geolocator;
 
 namespace AirPNPMap
 {
+   
     public partial class App : Application
     {
+    //Database
+        public static string DatabaseLocation = string.Empty;
         public App()
         {
             InitializeComponent();
-            
+
             MainPage = new MainPage();
+        }
+        
+        //Database
+        public App(string databaseLocation)
+        {
+            InitializeComponent();
+
+            MainPage = new MainPage();
+
+            DatabaseLocation = databaseLocation;
+
         }
 
         protected override void OnStart()

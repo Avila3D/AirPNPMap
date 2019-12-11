@@ -9,6 +9,7 @@ using Android.OS;
 using Plugin.Permissions;
 using Xamarin;
 using Plugin.CurrentActivity;
+using System.IO;
 
 namespace AirPNPMap.Droid
 {
@@ -26,7 +27,11 @@ namespace AirPNPMap.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             FormsMaps.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            //Databse path and folder
+            string dbName = "airpnp_db.sqlite";
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fullPath = Path.Combine(folderPath, dbName);
+            LoadApplication(new App(fullPath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

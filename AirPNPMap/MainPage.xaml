@@ -28,6 +28,9 @@
         <Tab Title="Submit Spot" Icon="AirPnP_splash_small">
             <ShellContent ContentTemplate="{DataTemplate local:Navigation}" />
         </Tab>
+        <Tab Title="Location List" Icon="AirPnP_splash_small">
+            <ShellContent ContentTemplate="{DataTemplate local:List}" />
+        </Tab>
     </TabBar>
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.
