@@ -22,11 +22,11 @@ namespace AirPNPMap.Models
 
         public string Avalability { get; set; }
 
-       // public double Latitude { get; set; }
+       public double Latitude { get; set; }
 
-        // public double Longitude { get; set; }
+        public double Longitude { get; set; }
 
-        public string PositionMap { get; set; }
+        //public string PositionMap { get; set; }
 
 
     }

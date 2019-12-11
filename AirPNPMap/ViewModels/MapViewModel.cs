@@ -50,10 +50,10 @@ namespace AirPNPMap.ViewModels
 
             }
 
-           foreach (parking parking in parkings)
+           foreach (parking parkingPosition in parkings)
             {
-                
-            }
+				PinCollection.Add(new CustomPin() { Position = new Position(parkingPosition.Latitude,parkingPosition.Longitude), Type = PinType.SearchResult, Label = parkingPosition.Name });
+			}
 
             Task.Run(async () =>
             {
