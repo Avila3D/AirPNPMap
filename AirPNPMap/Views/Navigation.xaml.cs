@@ -8,6 +8,7 @@ using SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.Maps;
 
 
 
@@ -27,8 +28,18 @@ namespace AirPNPMap.Views
         {
             var address = LocationEntry.Text;
             var locations = await Geocoding.GetLocationsAsync(address);
+            
 
+            
             var location = locations?.FirstOrDefault();
+
+            Position addressPosition = new Position(location.Latitude, location.Longitude);
+
+            
+
+
+
+
             if (location != null)
             {
                 Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
@@ -42,9 +53,9 @@ namespace AirPNPMap.Views
                 Price = PriceEntry.Text,
                 Name = NameEntry.Text,
                 Avalability = AvalavilityEntry.Text,
-                Latitude = location.Latitude,
-                Longitude =location.Longitude,
-
+                //Latitude = location.Latitude,
+                //Longitude =location.Longitude,
+                //PositionMap = location.ToString,
 
             };
 
