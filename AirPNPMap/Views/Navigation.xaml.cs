@@ -33,7 +33,7 @@ namespace AirPNPMap.Views
             
             var location = locations?.FirstOrDefault();
 
-            Position addressPosition = new Position(location.Latitude, location.Longitude);
+            //Position addressPosition = new Position(location.Latitude, location.Longitude);
 
             
 
