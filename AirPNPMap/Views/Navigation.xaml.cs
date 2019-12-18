@@ -18,9 +18,11 @@ namespace AirPNPMap.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Navigation : ContentPage
     {
+        public List<Parking> parkingLot;
         public Navigation()
         {
             InitializeComponent();
+            
         }
 
 
@@ -63,15 +65,25 @@ namespace AirPNPMap.Views
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<Parking>();
+                
+
                 int rows = conn.Insert(parking);
 
-                if (rows > 0)
+                if (rows > 0) {
                     await DisplayAlert("Success", $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}", "Ok");
-                else
+                }
+                
+                else { 
                     await DisplayAlert("Failure", "Parking spot failed to be inserted", "Ok");
+                }
+
+                parkingLot = conn.Table<Parking>().ToList();
+
             }
+
         }
 
             
     }
+    
 }

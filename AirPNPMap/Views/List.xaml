@@ -8,7 +8,7 @@
     <ListView x:Name="parkingListView">
         <ListView.ItemTemplate>
             <DataTemplate>
-                        <TextCell  Text="{Binding Name, Latitude, Longitude}"></TextCell>
+                        <TextCell  Text="{Binding latitude}"></TextCell>
                         
             </DataTemplate>
         </ListView.ItemTemplate>

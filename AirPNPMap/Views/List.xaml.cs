@@ -13,6 +13,7 @@ namespace AirPNPMap.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class List : ContentPage
     {
+        public List<Parking> parkings;
         public List()
         {
             InitializeComponent();
@@ -26,6 +27,11 @@ namespace AirPNPMap.Views
                 conn.CreateTable<Parking>();
                 var parkings = conn.Table<Parking>().ToList();
                 parkingListView.ItemsSource = parkings;
+
+                
+
+
+
 
             }
 

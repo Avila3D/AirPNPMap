@@ -28,7 +28,7 @@ namespace AirPNPMap.Droid
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             FormsMaps.Init(this, savedInstanceState);
             //Databse path and folder
-            string dbName = "airpnp_db.sqlite";
+            string dbName = "airpnp2_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);
             LoadApplication(new App(fullPath));
